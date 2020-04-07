@@ -99,7 +99,7 @@ let DualColorize = function (dom, index, ch, params) {
         "linear-gradient(" + String(alpha) + "deg,rgba(0,0,0,0) " + String(percent) + "% ,rgba(0,0,0,0.4) " + String(percent + 0.07) + "%, rgba(0,0,0,0) " + String(percent + 2.5) + "%)," +
         "linear-gradient(" + String(alpha) + "deg," + color[0] + " " + String(percent + 0.1) + "%, " + color[1] + " " + String(percent) + "%)";
     dom.style.color = "transparent";
-    dom.style.backgroundClip = "text"; //TODO: 在这里使用background clip会导致超出文本和的部分不显示,设置overflow也没用.<s>看起来应该在两端加上空格来扩大文本盒,再用relative手动排版?</s>这个方法不行...
+    dom.style.backgroundClip = "text"; //TODO: 在这里使用background clip会导致超出文本和的部分不显示,设置overflow也没用.
     dom.style.webkitBackgroundClip = "text"; //TODO: 应当减少私有前缀的使用,但不用又不兼容chromium系浏览器. 解决方法:消灭谷歌暴政,世界属于Mozilla!世界属于开放标准!
     return;
 };
