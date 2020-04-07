@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "JapariTitle";
+    src: url("japarifont.woff"),
+    url("GN-KillGothic-U-KanaNA.ttf"),
+    url("GN-KillGothic-U-KanaNB.ttf"),
+    url("GN-KillGothic-U-KanaO.ttf"),
+    url("GN-KMBFont-UB-NewstyleKanaA_fixed.woff");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "JapariFallbackTitle";
+    src: url("MStiffHei-PRC-UltraBold-3.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "TitleComment";
+    src: url("Play-Bold.ttf");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "TitleCommentFallback";
+    src: local("Source Han Sans SC Bold");
+    font-weight: 900;
+}
+
