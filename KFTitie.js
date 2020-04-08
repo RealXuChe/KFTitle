@@ -164,6 +164,7 @@ let callbackRotate = function (dom, index, ch, params) {
 let drawAll = function () {
     // 第一行
     let firstline_container = document.getElementById('firstline');
+    firstline_container.style.display = "block";
     firstline = str2List(firstline);
     drawText(firstline_container, firstline, "transparent", "1px", 500, "", "2.5em", callbackRotate, xors);
     //
@@ -194,6 +195,32 @@ let updateOnChange = function () {
     main_title = mt.value;
     title_comment = tc.value;
     drawAll();
+    centerXbxCbk();
+};
+let centerXbxCbk = function () {
+    let center_xbx = document.getElementById('center_xbx');
+    let flag_ = center_xbx.checked;
+    //
+    let firstline_container = document.getElementById('firstline');
+    firstline_container.style.textAlign = flag_ ? "center" : "unset";
+    //
+    let main_title_container = document.getElementById('main_title');
+    main_title_container.style.textAlign = flag_ ? "center" : "unset";
+    //
+    let dom, dom1;
+    let ttbg = document.querySelectorAll("span#title_bg");
+    for (dom of ttbg) {
+        for (dom1 of dom.childNodes) {
+            dom1.style.textAlign = flag_ ? "center" : "unset";
+            dom1.style.left = flag_ ? "0" : "unset";
+            dom1.style.right = flag_ ? "0" : "unset";
+        }
+    }
+    //
+    let tttxt = document.querySelectorAll("span#title_text");
+    for (dom of tttxt) {
+        dom.style.textAlign = flag_ ? "center" : "unset";
+    }
 };
 //
 let firstline = "女の子の姿になった動物たちが繰り広げる大冒険！";
@@ -203,10 +230,13 @@ window.onload = function () {
     let fl = document.getElementById('fl');
     let mt = document.getElementById('mt');
     let tc = document.getElementById('tc');
+    let center_xbx = document.getElementById('center_xbx');
     fl.value = firstline;
     mt.value = main_title;
     tc.value = title_comment;
     drawAll();
+    center_xbx.checked = false;
+    center_xbx.addEventListener("change", centerXbxCbk);
     fl.addEventListener("change", updateOnChange);
     mt.addEventListener("change", updateOnChange);
     tc.addEventListener("change", updateOnChange);
